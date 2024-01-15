@@ -8,8 +8,12 @@ public class Person {
 
     private String name = "Ella";
 
+    private final Parrot parrot;
+
     @Autowired
-    private Parrot parrot;
+    public Person(Parrot parrot) {
+        this.parrot = parrot;
+    }
 
 
     public String getName() {
@@ -24,7 +28,4 @@ public class Person {
         this.name = name;
     }
 
-    public void setParrot(Parrot parrot) {
-        this.parrot = parrot;
-    }
 }
