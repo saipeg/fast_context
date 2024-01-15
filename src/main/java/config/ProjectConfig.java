@@ -16,10 +16,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    Person person() {
+    Person person(Parrot parrot) {
         var p = new Person();
         p.setName("Ella");
-        p.setParrot(parrot());
+        p.setParrot(parrot);
         return p;
     }
 
