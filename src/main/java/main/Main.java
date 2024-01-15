@@ -10,11 +10,15 @@ public class Main {
                 ProjectConfig.class
         );
 
-        Parrot p = context.getBean("parrot1", Parrot.class);
+        Parrot p = context.getBean(Parrot.class);
+        System.out.println(p);
         System.out.println(p.getName());
 
-        Parrot p2 = context.getBean("Miki", Parrot.class);
-        System.out.println(p2.getName());
+//        Parrot p = context.getBean("parrot1", Parrot.class);
+//        System.out.println(p.getName());
+//
+//        Parrot p2 = context.getBean("Miki", Parrot.class);
+//        System.out.println(p2.getName());
 
 
         String s = context.getBean(String.class);
