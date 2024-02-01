@@ -1,27 +1,18 @@
 package config;
 
-import main.Parrot;
-import main.Person;
+import aspects.LoggingAspect;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
+@ComponentScan(basePackages = "services")
+@EnableAspectJAutoProxy
 public class ProjectConfig {
 
-    @Bean
-    Parrot parrot() {
-        var p = new Parrot();
-        p.setName("Koko");
-        return p;
-    }
-
-    @Bean
-    Person person(Parrot parrot) {
-        var p = new Person();
-        p.setName("Ella");
-        p.setParrot(parrot);
-        return p;
-    }
-
-
+  @Bean
+  public LoggingAspect aspect() {
+    return new LoggingAspect();
+  }
 }
